@@ -1,0 +1,19 @@
+package com.gms.web.mapper;
+
+import java.util.List;
+import java.util.Map;
+import com.gms.web.domain.ArticleDTO;
+
+public interface BoardMapper {
+	public void insert(ArticleDTO p);
+	public List<?> selectList(Map<?,?> p);
+	public List<?> selectSome(Map<?,?> p);
+	public ArticleDTO selectOne(String p);
+	public void count(Map<?,?> p);
+	public void update(Map<?,?> p);
+	public void delete(ArticleDTO p);
+	
+	public int countPaging();
+	
+	
+}

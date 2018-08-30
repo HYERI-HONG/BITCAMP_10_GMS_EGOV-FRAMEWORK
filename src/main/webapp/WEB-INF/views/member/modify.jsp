@@ -5,7 +5,7 @@
 		<h2 align="center">회원 정보 변경</h2>
 		<br>
 		<form id ="modifyForm" name="modifyForm">
-			<h5>아이디 : </h5><h5 id="modifyuserid"></h5>
+			<h5>아이디 : ${user.userid}</h5>
 			<input id="userid" type="hidden"/>
 			 <br>
 			기존 비밀번호 : <br>
@@ -13,7 +13,6 @@
 			 <br>
 			변경할 비밀번호 : <br>
 			<input type="text" name="after_pass"/>
-		<!-- 	<input type="text" name="after_pass" placeholder=""/> -->
 			<br>
 			소속팀 : <br>
 			<select name="teamid" id="teamid" class="select" >
@@ -44,7 +43,12 @@
 	</form> --%>
 
 <script>
-	user.modify();
+$('#modify_submit').click(function(){
+	$('#modifyForm').attr({
+		action:"${context}/member/modify",
+		method:"POST"
+	}).submit();
+});
 </script>
 
 

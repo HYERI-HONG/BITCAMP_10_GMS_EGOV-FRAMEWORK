@@ -11,16 +11,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.MemberService;
 
 @Controller
 @RequestMapping("/member")
-
+@SessionAttributes("user")
 public class MemberController {
 	static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Autowired MemberService memberService;
+	
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST) //post방식
 	public String add(@ModelAttribute("member") MemberDTO member) {
@@ -33,11 +35,9 @@ public class MemberController {
 	@RequestMapping("/search")
 	public void search() {}
 	
-	@RequestMapping("/retrieve/{userid}")
-	public String retrieve( Model model, 
-			@PathVariable String userid) {
+	@RequestMapping("/retrieve")
+	public String retrieve( Model model) {
 		logger.info("MemberController ::: retrieve(){}");
-		model.addAttribute("user", memberService.retrieve(userid));
 		return "private:member/retrieve.tiles";
 	}
 	@RequestMapping("/count")
@@ -47,7 +47,7 @@ public class MemberController {
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public String modify(@RequestParam Map<String,String> map , Model model) {
 		logger.info("MemberController ::: modify(){}");
-		logger.info("userid"+map.get("userid"));
+		map.put("userid", "");
 		memberService.modify(map);
 		model.addAttribute("user", memberService.retrieve(map.get("userid")));
 		return "private:member/retrieve.tiles";

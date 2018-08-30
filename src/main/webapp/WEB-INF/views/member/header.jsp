@@ -13,18 +13,13 @@
 			          <li class="menu-has-children"><a href="">Member</a>
 			            <ul>
 			              <li><a id="logout_btn">Logout</a></li>
-			              <li><a id="mypage_btn">My Page</a></li>
+			              <li><a id="mypage_btn">My Page</a></li>       
 			            </ul>
 			          </li>	
-			          <li class="menu-has-children"><a href="">Manager</a>
+			          <li class="menu-has-children"><a href="">bulletin board</a>
 			            <ul>
-		            	  <li><a href="elements.html">Login</a></li>
-				          <li class="menu-has-children"><a href="">Manager page</a>
-				            <ul>
-				              <li><a href="#">회원 관리</a></li>
-				              <li><a href="#"> 보기</a></li>
-				            </ul>
-				          </li>					                		
+		            	  <li><a id="board_list">게시글 목록</a></li>
+				          <li ><a id="board_write">게시글 쓰기</a></li>					                		
 			            </ul>
 			          </li>					          					          		          
 			          <li><a href="">Contact</a></li>
@@ -33,3 +28,21 @@
 		    	</div>
 		    </div>
 </header>
+<script>
+$('#logout_btn').click(function(){
+	location.href = '${context}/member/logout';
+});
+$('#mypage_btn').click(function(){
+	location.href = '${context}/member/retrieve';
+});
+$('#home_btn').click(function(){
+	location.href = '${context}/move/common/content/on';
+});
+
+$('#board_list').click(function(){
+	alert('board_list');
+});
+$('#board_write').click(function(){
+	alert('board_write');
+});
+</script>

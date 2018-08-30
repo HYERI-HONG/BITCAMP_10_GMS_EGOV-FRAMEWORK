@@ -45,3 +45,17 @@
 		</form>
 	</div>
 </div>
+<script>
+$('#add_submit').click(function(){
+	/*var form = document.getElementById('joinForm');
+	form.action = app.x()+"/member/add";
+	form.method = "POST";
+	form.submit();	*/
+	$('#addForm')
+	.attr({
+		action:"${context}/member/add",
+		method:"POST"
+	})
+	.submit();
+});
+</script>

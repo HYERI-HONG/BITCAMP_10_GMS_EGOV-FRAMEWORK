@@ -1,6 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<jsp:include page="../common/head.jsp"/>
 <div id="contentBox">
 	<div id="remove_content">
 		<h3 align="center">회원 탈퇴</h3>
@@ -14,3 +12,15 @@
 		</form>
 	</div>
 </div>
+<script>
+$('#remove_submit').click(function(){
+	if('${user.userid}'===form.password.value){
+		$('#removeForm').attr({
+			action:app.x()+"/member/remove",
+			method:"POST"
+		}).submit();
+	}else{
+		alert("비밀번호가 틀렸습니다.")
+	}
+});
+</script>

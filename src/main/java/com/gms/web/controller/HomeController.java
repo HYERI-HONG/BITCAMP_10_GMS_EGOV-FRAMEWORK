@@ -27,6 +27,7 @@ public class HomeController {
 			@PathVariable String page,
 			@PathVariable String auth) {
 		logger.info("HomeController ::: move(){}");
+		
 		String rs ="public:"+dir+"/"+page+".tiles";
 		if(auth.equals("on")) {
 			rs="private:"+dir+"/"+page+".tiles";

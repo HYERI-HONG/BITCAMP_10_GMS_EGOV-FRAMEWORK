@@ -29,7 +29,19 @@
 			          </li>					          					          		          
 			          <li><a href="contact.html">Contact</a></li>
 			        </ul>
-			      </nav><!-- #nav-menu-container -->		    		
+			      </nav>	    		
 		    	</div>
 		    </div>
 </header>
+
+<script>
+$('#login_btn').click(function(){
+	location.href = '${context}/move/member/login/off';
+});
+$('#add_btn').click(function(){
+	location.href = '${context}/move/member/add/off';
+});
+$('#home_btn').click(function(){
+	location.href = '${context}/move/common/content/off';
+});
+</script>

@@ -32,7 +32,10 @@
 			<link rel="stylesheet" href="${context}/resources/css/owl.carousel.css">				
 			<link rel="stylesheet" href="${context}/resources/css/main.css">
 			<link rel="stylesheet" href="${context}/resources/css/style.css" />
-			<script src="${context}/resources/js/app.js"></script>
+		
+			<link href="${context}/other_resources/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    		<link href="${context}/other_resources/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+			<%-- <script src="${context}/resources/js/app.js"></script> --%>
 			<script src="${context}/resources/js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="${context}/resources/js/popper.min.js"></script>
 			<script src="${context}/resources/js/vendor/bootstrap.min.js"></script>			
@@ -66,11 +69,7 @@
 			<div id="bottom">
 				<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 			</div>
-		</div>
-		
-		<script>
-			app.init('${context}');	
-		</script>	
+		</div>	
 	</body>
 </html>
 

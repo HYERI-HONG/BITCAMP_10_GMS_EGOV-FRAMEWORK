@@ -3,13 +3,11 @@ var app = app || {}
 var user = user || {}
 var app={
 	init : x =>{
-		console.log('step1');
 		sessionStorage.removeItem('image');
 		app.session.context(x);
 		app.onCreate();
 	},
 	onCreate : ()=>{
-		console.log('step3');
 		app.setContentView();
 		$('#login_btn').click(()=>{
 			location.href = app.x()+'/move/member/login/off';
@@ -91,12 +89,11 @@ var app={
 		});
 	},
 	setContentView : ()=>{
-		console.log('step4  '+app.session.path('js'));
+		
 	}
 };
 app.session = {
 		context : x=>{
-			console.log('step2');
 			sessionStorage.setItem('context',x);
 			sessionStorage.setItem('js',x+'/resources/js');
 			sessionStorage.setItem('css',x+'/resources/css');

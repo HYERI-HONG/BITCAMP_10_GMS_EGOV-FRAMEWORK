@@ -47,6 +47,14 @@
 			<h4 align="center"><a id='goModify'>회원 정보 수정  </a>/<a id='goRemove'>  회원 탈퇴</a></h4>
 		</div>
 </div>
+<script>
+$('#goModify').click(function(){
+	location.href ='${context}/move/member/modify/on';
 
+});
+$('#goRemove').click(function(){
+	location.href = '${context}/move/member/remove/on';
+});
+</script>
 
 

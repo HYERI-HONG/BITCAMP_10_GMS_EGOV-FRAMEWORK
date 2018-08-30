@@ -14,3 +14,12 @@
 		</form>
 	</div>
 </div>
+<script>
+$('#login_submit').click(function(){
+	$('#loginForm').attr({
+		action:"${context}/member/login",
+		method:"POST"
+	})
+	.submit();
+});
+</script>

@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="ko">
-<jsp:include page="../common/head.jsp"/>
 <body>
 	<div id="wrapper">
 		<div id="header">
@@ -17,7 +16,7 @@
 	        </c:choose>
 		</div>
 		<div id="footer">
-			<jsp:include page="../common/footerBox.jsp"/>
+			
 		</div>
 	</div>
 	
