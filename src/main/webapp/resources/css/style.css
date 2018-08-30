@@ -1,0 +1,52 @@
+
+div#content{
+	padding: 15px 30px 15px 30px;
+	background-color: #005580;
+	/* background-image : url('../img/home/main.jpg'); */
+	margin-bottom: 30px;
+	min-height: 400px;
+}
+div#login_content{
+	border : 1px solid white;
+	margin : 160px 60px;
+	text-align : center;
+}
+div#add_content{
+	border : 1px solid black;
+	margin : 160px 60px;
+	text-align : center;
+}
+div#retrieve_content{
+	margin : 160px 60px;
+	text-align : center;
+}
+table#retrieve{
+	border : 1px solid black;
+	width : 800px;
+	height : 100px;
+	text-align : center;
+	margin : auto;
+}
+table#retrieve tr th{
+	
+}
+table#retrieve tr td{
+	border : 1px solid black;
+	text-align : center;
+}
+div#modify_content{
+	border : 1px solid black;
+	margin : 160px 60px;
+	text-align : center;
+	
+}
+div#remove_content{
+	border : 1px solid white;
+	margin : 160px 60px;
+	text-align : center;
+}
+.select{
+	text-align : center;
+	margin : auto;
+}
+

@@ -1,0 +1,209 @@
+@charset "EUC-KR";
+
+body{font-family: 'Malgun Gothic','Verdana';
+		background-color: #0080c0;
+		color: #fff;
+		margin: 0;
+		padding: 0; }
+h1{font-size: 2em;
+	padding-bottom: 0;
+	margin-bottom: 0;}
+div#wrapper{
+	width: 100%;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+div#header{
+	position: relative;
+	margin-bottom:0;
+	padding-bottom: 0;
+	color: #000;
+}
+div#menu_header{
+	position: relative;
+	margin-bottom:0;
+	padding-bottom: 0;
+	background : #005580;
+	color: white;
+}
+div#title-box{
+	float: left;
+	text-align: center;
+	display: block;
+	margin-left: 50px;
+}
+div#login-box{
+	float: right;
+	margin: 10px;
+	font-size: 1.1em;
+	display: block;
+	color: #fff;
+}
+div#login-box a:hover{
+	color: gray;
+	text-decoration: none;
+	
+}
+div#login-box a:active{
+	color: #ff0000;
+	text-decoration: red;
+	}
+div#header h1{
+	color: #fff;
+	padding: 5px 0;
+	margin: 0;
+	border: none;
+	line-height: 2em;
+	font-weight: bold;
+	font-size: 32px;
+	}
+div#content{
+	padding: 15px 30px 15px 30px;
+	background-color: #005580;
+	/* background-image : url('../img/home/main.jpg'); */
+	margin-bottom: 30px;
+	min-height: 400px;
+}
+div#admin_content_box{
+	clear: both;
+	color : black;
+	text-align : center;
+}
+div#content-box{
+	clear: both;
+	color : white;
+	margin-top: 200px;
+}
+div#menu-box{
+	margin-top: 40px;
+	clear: both;
+}
+ul#menu{
+	text-align: right;
+	margin: 0;
+	border-bottom: 1px #8000ff;
+	position: relative;
+}
+ul#menu li{
+	display: inline;
+	list-style: none;
+	background-color: #408080
+}
+ul#menu li a{
+	padding: 10px 20px;
+	background-color: #ff8000;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 2.8em;
+	color: black;
+}
+ul#menu li a:hover{
+	background-color: #ff80c0;
+	text-decoration: none;
+}
+ul#menu li a:active{
+
+	background-color: #804000;
+	text-decoration: none;
+}
+div#footer{
+	clear: both;
+	color: #fff;
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	line-height: normal;
+	font-size: 0.9em;	
+}
+.memberlist{
+	border : 1px solid black;
+	text-align : center;
+	margin : auto;
+	background-color: white;
+	width : 80%;
+}
+.memberlist tr th{
+	border : 1px solid black;
+	background-color : #ff8000;
+}
+.memberlist tr td{border : 1px solid black} 
+
+.search_content{
+    margin-bottom: 20px;
+    float : center;
+}
+.search_button{
+	width: 50px;
+}
+table#mypage{
+	border : 1px solid white;
+	width : 800px;
+	height : 100px;
+	text-align : center;
+	margin : auto;
+}
+table#mypage tr th{
+	
+}
+table#mypage tr td{
+	border : 1px solid white;
+	text-align : center;
+}
+
+div#login_content{
+	border : 1px solid white;
+	margin : 130px 60px;
+	text-align : center;
+}
+div#mypage_content{
+	margin : 25px 60px;
+	text-align : center;
+}
+div#delete_content{
+	border : 1px solid white;
+	margin : 145px 60px;
+	text-align : center;
+}
+div#update_content{
+	border : 1px solid white;
+	margin : 50px 60px;
+	text-align : center;
+}
+
+div#menu_content{
+	border : 1px solid white;
+	margin : 20px 60px;
+	text-align : center;
+}
+div#mypage_footer{
+	clear: both;
+	color: white;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	line-height: normal;
+	font-size: 0.8em;
+	background-image : url('../img/home/footer-front.png');	
+	background-size: contain;
+}
+div#menu_footer{
+	clear: both;
+	color: white;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	line-height: normal;
+	font-size: 0.8em;
+	background-image : url('../img/home/footer-front.png');	
+	background-size: contain;
+}
+.pageBox{
+	list-style : none; /* remove list bullets */
+	padding : 0;
+	margin : 0;
+}
+.pageBox li{
+	display : inline;
+}
