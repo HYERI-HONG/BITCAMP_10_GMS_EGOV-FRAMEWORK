@@ -2,11 +2,12 @@ package com.gms.web.service.impl;
 
 import java.util.List;
 import java.util.Map;
-
+import org.springframework.stereotype.Service;
 import com.gms.web.domain.ArticleDTO;
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.BoardService;
 
+@Service
 public class BoardServiceImpl implements BoardService {
 
 	@Override

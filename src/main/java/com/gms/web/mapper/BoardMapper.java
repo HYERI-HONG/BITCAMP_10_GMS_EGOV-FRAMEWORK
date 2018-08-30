@@ -2,8 +2,10 @@ package com.gms.web.mapper;
 
 import java.util.List;
 import java.util.Map;
+import org.springframework.stereotype.Repository;
 import com.gms.web.domain.ArticleDTO;
 
+@Repository
 public interface BoardMapper {
 	public void insert(ArticleDTO p);
 	public List<?> selectList(Map<?,?> p);
@@ -14,6 +16,12 @@ public interface BoardMapper {
 	public void delete(ArticleDTO p);
 	
 	public int countPaging();
+	public int listSearchCount();
+	public ArticleDTO listCriteria();
+	public ArticleDTO listPage();
+	public List<ArticleDTO> listSearch();
+	
+	
 	
 	
 }
