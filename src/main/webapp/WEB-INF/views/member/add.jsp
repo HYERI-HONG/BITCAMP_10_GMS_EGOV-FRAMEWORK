@@ -5,16 +5,16 @@
 		<br>
 		<form id ="addForm" name="addForm">
 			아이디 : <br>
-			<input type="text" name="userid" required/>
+			<input type="text" name="userid"/>
 			<br>
 			비밀번호 : <br>
-			<input type="text" name="password" required/>
+			<input type="text" name="password"/>
 			<br>
 			이름 : <br>
-			<input type="text" name="name" required/>
+			<input type="text" name="name" />
 			<br>
 			주민 번호 : <br>
-			<input type="text" name ="ssn" required/>
+			<input type="text" name ="ssn"/>
 			<br>
 			소속팀 : <br>
 		    <input type="radio" name="teamid" value="LP" checked="checked" /> 레츠플레이팀
@@ -46,16 +46,21 @@
 	</div>
 </div>
 <script>
+
+
 $('#add_submit').click(function(){
-	/*var form = document.getElementById('joinForm');
-	form.action = app.x()+"/member/add";
-	form.method = "POST";
-	form.submit();	*/
-	$('#addForm')
-	.attr({
-		action:"${context}/member/add",
-		method:"POST"
-	})
-	.submit();
+	if($('input[name="userid"]').val()===''
+			||$('input[name="password"]').val()===''
+			||$('input[name="ssn"]').val()===''
+			||$('input[name="name"]').val()===''){
+		alert("필수 입력값이 없습니다.");
+	}else{
+		$('#addForm')
+		.attr({
+			action:"${context}/member/add",
+			method:"POST" 
+		})
+		.submit();
+	}
 });
 </script>

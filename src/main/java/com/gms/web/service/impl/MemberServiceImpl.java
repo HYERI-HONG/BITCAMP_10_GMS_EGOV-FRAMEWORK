@@ -1,5 +1,6 @@
 package com.gms.web.service.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -16,23 +17,26 @@ public class MemberServiceImpl implements MemberService{
 	public void add(MemberDTO p) {
 		
 		//--------------------Age-----------------//
-		Date date = new Date();
+		
+		SimpleDateFormat date = new SimpleDateFormat("yyyy/mm/dd");
+		Date today = new Date();
+		String toDate = date.format(today);
 		String ssn = p.getSsn();
 		
-		/*int toYear = date.getYear()+1900;
-		int toMonth = date.getMonth()+1;
-		int toDay = date.getDate();
+		int toYear = Integer.parseInt(toDate.split("/")[0]);
+		int toMonth = Integer.parseInt(toDate.split("/")[1]);
+		int toDay = Integer.parseInt(toDate.split("/")[2]);
 		
 		int birYear = Integer.parseInt(ssn.substring(0, 2));
 		int birMonth = Integer.parseInt(ssn.substring(2, 4));
 		int birDay = Integer.parseInt(ssn.substring(4, 6));
-		
+	
 		birYear = birYear>18&&birYear<=99 ? 
 				Integer.parseInt("19"+String.valueOf(birYear))
 				:
-					Integer.parseInt("20"+String.valueOf(birYear));
+				Integer.parseInt("20"+String.valueOf(birYear));
 
-		int age = ((birMonth*100+birDay)>(toMonth*100+toDay))? toYear-birYear-1:toYear-birYear;
+		int age = ((birMonth*100+birDay)>(toMonth*100+toDay))? toYear-birYear+1:toYear-birYear;
 		p.setAge(String.valueOf(age));
 		
 		//--------------------Gender-----------------//
@@ -49,7 +53,7 @@ public class MemberServiceImpl implements MemberService{
 		p.setGender(gender);	
 		
 		System.out.println("age : "+age+" gender :"+gender);
-		memberDAO.insert(p);*/
+		memberDAO.insert(p);
 	}
 
 	@Override

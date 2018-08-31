@@ -14,10 +14,17 @@
 </div>
 <script>
 $('#remove_submit').click(function(){
-	$('#removeForm').attr({
-		action:"${context}/member/remove",
-		method:"POST"
-	}).submit();
-
+	if($('#password').val()!==''){
+		if($('#password').val()==='${user.password}'){
+			$('#removeForm').attr({
+				action:"${context}/member/remove",
+				method:"POST"
+			}).submit();
+		}else{
+			alert("비밀번호가 틀렸습니다.");
+		}
+	}else{
+		alert("비밀번호를 입력하세요.");
+	}
 });
 </script>

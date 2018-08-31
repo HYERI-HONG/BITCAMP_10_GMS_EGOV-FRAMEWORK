@@ -1,19 +1,19 @@
 package com.gms.web.controller;
 
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
-
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.MemberService;
 
@@ -21,11 +21,12 @@ import com.gms.web.service.MemberService;
 @RequestMapping("/member")
 @SessionAttributes("user")
 public class MemberController {
-	static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired MemberService memberService;
+	
 	@RequestMapping(value="/add", method=RequestMethod.POST) //post방식
 	public String add(@ModelAttribute("member") MemberDTO member) {
-		logger.info("MemberController ::: add(){}");
+		logger.info("======== MemberController ::: add() =======");
 		memberService.add(member);
 		return "redirect:/move/member/login/off";
 	}
@@ -67,7 +68,7 @@ public class MemberController {
 	@RequestMapping(value="/login", method=RequestMethod.POST )
 	public String login(@ModelAttribute("member") MemberDTO member, Model model) {
 		logger.info("MemberController ::: login(){}");
-		String rs ="log:member/retrieve.tiles";
+		String rs ="private:member/retrieve.tiles";
 		if(memberService.login(member)) {
 			model.addAttribute("user", memberService.retrieve(member.getUserid()));
 		}else {
@@ -76,10 +77,10 @@ public class MemberController {
 		return rs;
 	}
 	@RequestMapping("/logout")
-	public String logout(@ModelAttribute MemberDTO user) {
+	public String logout(@ModelAttribute MemberDTO user, HttpSession session) {
 		logger.info("MemberController ::: logout(){}");
-		user = null;
-		return "log:common/content.tiles";
+		session.setAttribute("user", null);
+		return "public:common/content.tiles";
 	}
 	@RequestMapping("/fileupload")
 	public void fileupload() {}
