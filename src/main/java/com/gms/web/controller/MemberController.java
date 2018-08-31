@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.gms.web.common.Calc;
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.MemberService;
 
@@ -20,9 +22,13 @@ public class MemberController {
 	static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired MemberService memberService;
 	@Autowired MemberDTO member;
+	@Autowired Calc calc;
+	
 	@RequestMapping(value="/add", method=RequestMethod.POST) //post방식
 	public String add(@ModelAttribute("member") MemberDTO member) {
 		logger.info("======== MemberController ::: add() =======");
+		member.setAge(calc.calcAge(member.getSsn()));
+		member.setGender(calc.calcGender(member.getSsn()));
 		memberService.add(member);
 		return "redirect:/move/member/login/off";
 	}

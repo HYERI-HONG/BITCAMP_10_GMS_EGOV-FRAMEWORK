@@ -4,7 +4,6 @@
 	<definition name="public"
 		template="/WEB-INF/views/common/main.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
-		<put-attribute name="nav" value=""/>
 		<put-attribute name="content" value=""/>
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
 	</definition>
