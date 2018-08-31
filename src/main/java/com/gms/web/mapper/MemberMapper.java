@@ -13,7 +13,7 @@ public interface MemberMapper {
 	public List<?> selectSome(Map<?,?> p);
 	public MemberDTO selectOne(String p);
 	public void count(Map<?,?> p);
-	public void update(Map<?,?> p);
+	public void update(MemberDTO p);
 	public void delete(MemberDTO p);
 	public String login(MemberDTO p);
 }

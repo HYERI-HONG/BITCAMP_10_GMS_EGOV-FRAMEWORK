@@ -11,7 +11,7 @@
 			<input id="before_pass" type="text" name="before_pass"/>
 			 <br>
 			변경할 비밀번호 : <br>
-			<input id="after_pass" type="text" name="after_pass"/>
+			<input id="after_pass" type="text" name="password"/>
 			<br>
 			소속팀 : <br>
 			<select name="teamid" id="teamid" class="select" >
@@ -46,7 +46,7 @@ $('#roll').val('${user.roll}').prop('selected', true);
 $('#teamid').val(['${user.teamid}']);
 
 $('#modify_submit').click(function(){
-	if($('#before_pass').val()!==''){
+	if($('#before_pass').val()!==''){ //null체크
 		if($('#before_pass').val()==='${user.password}'){
 			$('#after_pass').val(
 					$('#after_pass').val() 
@@ -62,7 +62,6 @@ $('#modify_submit').click(function(){
 	}else{
 		alert("비밀번호를 입력하세요.")
 	}
-	
 });
 </script>
 

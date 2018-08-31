@@ -80,7 +80,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void modify(Map<?,?> p) {
+	public void modify(MemberDTO p) {
 		memberDAO.update(p);
 		
 	}

@@ -19,11 +19,10 @@
 	</select>
 	<update id="update">
 	UPDATE MEMBER SET 
-	PASSWORD = #{after_pass},
+	PASSWORD = #{password},
 	ROLL = #{roll},
 	TEAMID = #{teamid}
 	WHERE USERID LIKE #{userid}
-	AND PASSWORD LIKE #{before_pass}
 	</update>
 	<delete id="delete">
 	DELETE FROM MEMBER 
